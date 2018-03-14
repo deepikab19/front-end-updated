@@ -1,0 +1,194 @@
+<!-- <div class="jumbotron">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <img src="assets/hm.png" height="200" width="500" />
+
+            </div>
+
+            <div class="col-md-6">
+
+                <h1>Training Registraion</h1>
+
+                <h2>Register for different training events</h2>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div> -->
+
+<div class="error-msg">
+
+    <P>
+        <b>{{msg}}</b>
+    </P>
+
+</div>
+
+<div class="nospace">
+
+    <div class="row main">
+
+
+        <div class="main-login main-center">
+
+            <!-- <form class="form-horizontal" method="post" action="#"> -->
+
+
+                <div class="form-group">
+
+                    <label for="name" class="cols-sm-2 control-label">Program Name</label>
+
+                    <div class="cols-sm-10">
+
+                        <div class="input-group">
+
+                            <span class="input-group-addon">
+                                <i class="fa fa-laptop" aria-hidden="true"></i>
+                            </span>
+
+                            <input type="text" class="form-control" #pname placeholder="Enter program name" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="email" class="cols-sm-2 control-label">Date</label>
+
+                    <div class="cols-sm-10">
+
+                        <div class="input-group">
+
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                            </span>
+
+                            <input type="datetime-local" #date class="form-control" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+
+                    <label for="username" class="cols-sm-2 control-label">Venue</label>
+
+                    <div class="cols-sm-10">
+
+                        <div class="input-group">
+
+                            <span class="input-group-addon">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </span>
+
+                            <input type="text" class="form-control" #venue placeholder="Enter Venue" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="password" class="cols-sm-2 control-label">Trainer Name</label>
+
+                    <div class="cols-sm-10">
+
+                        <div class="input-group">
+
+                            <span class="input-group-addon">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+
+
+                            <select class="form-control" id="Id" #Id="ngModel" [(ngModel)]="username" name="Id" (change)="selectName();">
+
+                                <option>----- select -----</option>
+
+                                <option *ngFor="let user of users"  [ngValue]="user.UserName">
+
+                                    {{user.UserName}}
+
+                                </option>
+
+
+                                <!-- <div *ngIf="Id.pristine"> 
+        
+        Trainer required. 
+        
+        </div> -->
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Search -->
+                <div class="form-group">
+                    <label  class="cols-sm-2 control-label">Trainees</label>
+
+                    <div >
+                        <input  type="text"  id="inputName" [name]=input [(ngModel)]="inputName"  />
+                        <input type="button" (click)="FilterByName()" value="Apply"/>
+                      </div>
+                      <ul>
+                        <li *ngFor="let user of filteredItems" (click)="onSelect(user)">
+                            {{user.UserName}}   
+                        </li>
+                      </ul>
+                      <input type="text" value="{{selectedUser}}">
+
+                </div>
+                <!-- Search End -->
+
+                <div class="form-group ">
+
+                    <div class="form-group1">
+
+                        <button type="button" class="btn btn-primary btn-lg btn-block login-button" (click)="SubmitForm(pname.value, date.value, venue.value)">Register</button>
+
+                    </div>
+
+                </div>
+
+
+            <!-- </form> -->
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+

@@ -1,0 +1,69 @@
+.rating
+{
+    width:70px;
+    background-color: lightgrey;
+    
+
+}
+.align_l
+{
+    text-align: left
+}
+.align_c
+{
+    text-align: center
+}
+.parameter
+{
+    width:500px;
+    background-color: lightgrey
+}
+form{
+    margin-left: 250px
+}
+.radio
+    {
+        padding: 10px
+    }
+    td{
+        text-align: center
+    }
+    textarea
+    {
+        width: 880px
+    }
+  .tab{
+      margin-left: 15px
+  }
+  th{
+width: 40px
+
+  }
+  input {
+    border: none;
+    background: transparent;
+    column-width: 100px;
+    
+}
+a{
+   font-size: 15px
+} 
+
+.submitBtn
+{
+    background-color: darkgreen;
+    border: none;
+    margin-left: 20px
+}
+.descriptive{
+    border-color: black;
+    background-color:lightgrey;
+}
+.margin_l
+{
+   margin:50px
+}
+.error
+{
+    color: firebrick
+}

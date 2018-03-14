@@ -1,0 +1,83 @@
+<div *ngFor="let training of trainings">
+
+  <!-- <div class="tab"*ngIf="training.Trainer=='akshay'"> -->
+      <div class="tab">
+    <input type="radio" name="training" [value]="training.TrainingID" (change)="onSelectionChange(training.TrainingID)">
+   
+    <b>Program Name:</b> {{training.TrainingName}}
+    <br/>
+    <b>Trainer Name :</b> {{training.Trainer}}
+    <br/>
+    <b> Date: </b>{{training.Date | date:'medium'}}
+    <br/>
+    <b> Venue: </b>{{training.Venue}}
+    <br/><br/>
+    <br/>
+  </div>
+</div>
+
+<div class="container">
+    <h4> Program Parameters</h4>
+  <div class="wrapper">
+
+<div *ngFor="let question of questions1"><br/>
+   {{question.Description}}
+  <!-- <div *ngFor="let data of datas |  paginate: {id:'display1' ,itemsPerPage: 7, currentPage: p }">
+    <div *ngIf="question.QuestionID==data.QuestionID" id="dataflow">
+    
+      {{data.Answers}}
+
+    </div>
+    </div> -->
+</div>
+
+<br/>
+<h4> Training Parameters</h4> 
+
+<div *ngFor="let question of questions2"><br/>
+    
+        {{question.Description}}
+        <!-- <div *ngFor="let data of datas|  paginate: {id:'display2' ,itemsPerPage: 6, currentPage: p }">
+            <div *ngIf="question.QuestionID==data.QuestionID" id="dataflow">
+         
+              {{data.Answers}}
+        
+            </div>
+            </div> -->
+
+  </div>
+
+<br/>
+
+  <h4>Descriptive Questions</h4>
+  <div *ngFor="let question of questions3"><br/>
+     
+           {{question.Description}} 
+          <!-- <div *ngFor="let data of datas|  paginate: {id:'display3' ,itemsPerPage: 4, currentPage: p }">
+              <div *ngIf="question.QuestionID==data.QuestionID" id="dataflow">
+           
+                {{data.Answers}}
+          
+              </div>
+              </div>  -->
+
+    </div>
+  </div>
+ 
+      <div class="move" *ngFor="let data of datas|  paginate: {id:'display1' ,itemsPerPage: 17, currentPage: p }"><br/>
+        <div *ngIf="data.QuestionID==8||data.QuestionID==14">
+          <br/>
+          <br/>
+        </div>
+        <div *ngIf="data.QuestionID==14||data.QuestionID==15">
+            <br/>
+        </div>
+          {{data.Answers}}
+          
+        </div> 
+  
+
+  </div>
+  <pagination-controls  id="display1" (pageChange)="p = $event"></pagination-controls>
+                      
+

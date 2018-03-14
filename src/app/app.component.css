@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+    float: right;
+    padding-right: 600px;
+   
+}
+a{
+   
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+.master
+{
+    margin-left: 40px
+}
+.masterimg
+{
+    background-image: url("assets/images/master.jpg")
+}
+.fail
+{
+    text-align: center;
+    color: brown
+}

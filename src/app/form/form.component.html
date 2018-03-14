@@ -1,0 +1,178 @@
+<!-- <div class="jumbotron">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <img src="assets/hm.png" height="200" width="500" />
+
+            </div>
+
+            <div class="col-md-6">
+
+                <h1>Feedback Form</h1>
+
+                <h2>Fill your feedback</h2>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div> -->
+
+<div class="margin_l">
+<div>
+  <h3>Select Training</h3>
+  <br/>
+
+
+  <div *ngFor="let training of trainings">
+
+    <div class="tab">
+      <input type="radio" name="training" [value]="training.TrainingID" (change)="onSelectionChange(training.TrainingID)">
+     
+      <b>Program Name:</b> {{training.TrainingName}}
+      <br/>
+      <b>Trainer Name :</b> {{training.Trainer}}
+      <br/>
+      <b> Date: </b>{{training.Date | date:'medium'}}
+      <br/>
+      <b> Venue: </b>{{training.Venue}}
+      <br/><br/>
+      <br/>
+    </div>
+  </div>
+  
+  
+
+
+</div>
+
+
+
+<h3> Program Parameters</h3>
+
+
+<div *ngFor="let question of questions1">
+  <div *ngIf="question.OptionGroupID==1" >
+    <a (click)="showDialog = !showDialog;onSelect(question.QuestionID)" class="btn">{{question.Description}}</a><br/><br/>
+  </div>
+  <div *ngIf ="question.OptionGroupID==2">
+      <a (click)="showDialog1 = !showDialog1;onSelect(question.QuestionID)" class="btn">{{question.Description}}</a><br/><br/>
+  </div>
+  </div>
+
+<app-dialog id="dialogbox" [(visible)]="showDialog">
+  
+    <table>
+        <tr>
+          <th>
+            <img height="30px" wid src="assets/images/1.jpg" alt="1" />
+          </th>
+          <th>
+            <img height="30px" src="assets/images/2.jpg" alt="2" />
+          </th>
+          <th>
+            <img height="30px" src="assets/images/3.jpg" alt="3" />
+          </th>
+          <th>
+            <img height="30px" src="assets/images/4.jpg" alt="4" />
+          </th>
+          <th>
+            <img height="30px" src="assets/images/5.jpg" alt="5" />
+          </th>
+        </tr>
+        <tr>
+
+          <td>
+            <input type="radio" [name]="'Parameter'" [value]="1" [(ngModel)]="program">
+          </td>
+          <td>
+            <input type="radio" [name]="'Parameter'" [value]="2" [(ngModel)]="program">
+          </td>
+          <td>
+            <input type="radio" [name]="'Parameter'" [value]="3" [(ngModel)]="program">
+          </td>
+          <td>
+            <input type="radio" [name]="'Parameter'" [value]="4" [(ngModel)]="program">
+          </td>
+          <td>
+            <input type="radio" [name]="'Parameter'" [value]="5" [(ngModel)]="program">
+          </td>
+        </tr>
+      </table>
+      <br/><br/>
+  <button (click)="showDialog = !showDialog"  class="btn">Close</button>
+  <button (click)="confirm(selectedParameter)" class="btn">Submit</button>
+</app-dialog>
+
+
+
+ <h3> Training Parameters</h3> 
+
+ 
+ <div *ngFor="let question of questions2">
+  <a (click)="showDialog = !showDialog;onSelect(question.QuestionID)" class="btn">{{question.Description}}</a><br/><br/>
+
+</div>
+
+<app-dialog [(visible)]="showDialog1">
+  <div > 
+    <table>
+      <tr>
+        <th>YES</th>
+        <th>NO</th>
+        <th>NONE</th>
+      </tr>
+      <tr>
+          <td>
+              <input type="radio" [name]="'descriptive'" [value]="1" [(ngModel)]="program" >
+            </td>
+            <td>
+              <input type="radio" [name]="'descriptive'" [value]="2" [(ngModel)]="program">
+            </td>
+            <td>
+              <input type="radio" [name]="'descriptive'" [value]="3" [(ngModel)]="program">
+            </td>
+      </tr>
+    </table>
+      
+  </div><br/><br/>
+  <button (click)="showDialog1 = !showDialog1"  class="btn">Close</button>
+  <button (click)="confirm(selectedParameter)" class="btn">Submit</button>
+
+
+</app-dialog> 
+<h3>Descriptive Questions</h3>
+
+<div *ngFor="let question of questions3">
+    <a (click)="showDialog2 = !showDialog2;onSelect(question.QuestionID)" class="btn">{{question.Description}}</a><br/><br/>
+    
+  
+  </div>
+  <app-dialog [(visible)]="showDialog2">
+   
+      <input type="text" class="form-control descriptive"/><br/>
+      <br/><br/>
+      <button (click)="showDialog2 = !showDialog2"  class="btn">Close</button>
+      <button  (click)="confirm(selectedParameter)" class="btn">Submit</button>
+  </app-dialog>
+  
+  <br/>
+<button class="btn btn-info submitBtn"  (click)="SubmitForm()">Submit</button>
+<br/><br/>
+<h4 class="error">
+{{errormsg}}</h4>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+</div>

@@ -1,0 +1,24 @@
+.formTable
+{
+
+}
+.formRow
+{
+    display: table-row;
+}
+.formHeading
+{
+    display: table-header-group;
+}
+.formBody
+{
+    display: table-row-group;
+}
+.formFoot
+{
+    display: table-footer-group;
+}
+.formHead_Cell
+{
+    display: table-cell;
+}

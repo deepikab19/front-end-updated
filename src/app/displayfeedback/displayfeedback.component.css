@@ -1,0 +1,31 @@
+
+.move{
+
+ 
+
+    margin: 0 0 0 400px; 
+    
+    padding-top: 3px;
+    
+    }
+    
+    .wrapper{
+    
+    float: left;
+    
+    width: 320px;
+    
+     
+    
+    }
+    
+    .container{
+    
+    width: 750px;
+    
+    border: 1px solid black;
+    
+    overflow: auto; 
+    
+    }
+    
